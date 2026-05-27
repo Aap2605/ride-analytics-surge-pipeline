@@ -47,6 +47,8 @@ def generate_live_ride_batch(batch_size=1000):
 
     df.iloc[np.random.randint(0, batch_size, 20), 3] = -50.0
 
+    df.to_csv('pipeline/raw_stream_data.csv', index=False)
+    print("Ride data saved successfully!")
     print(df.head())
 
 if __name__ == "__main__":
