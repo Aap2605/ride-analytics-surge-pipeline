@@ -2,19 +2,20 @@
 
 ## Project Overview
 
-Real-Time Ride Analytics & Surge Pricing Pipeline is a data analytics and data engineering project that simulates a ride-hailing platform similar to Uber. The project focuses on generating ride transaction data, processing records through a data pipeline, analyzing ride demand patterns, and implementing surge pricing logic to derive actionable business insights.
+Real-Time Ride Analytics & Surge Pricing Pipeline is an end-to-end Data Analytics and Data Engineering project that simulates a ride-hailing platform similar to Uber. The project focuses on ride data generation, data cleaning, analytics processing, and business intelligence reporting to derive meaningful insights from ride transactions.
 
-This project demonstrates practical applications of Python, SQL, data processing pipelines, and analytics workflows commonly used in transportation and mobility platforms.
+The system demonstrates how real-time ride data can be transformed into actionable business insights using Python, SQL, and analytics workflows commonly used in transportation and mobility platforms.
 
 ---
 
 ## Business Objectives
 
-* Analyze ride demand across different locations and time periods.
-* Implement dynamic surge pricing based on ride demand fluctuations.
+* Analyze ride demand across multiple locations.
+* Track ride completion and cancellation patterns.
 * Process and clean ride transaction data.
-* Generate operational and business analytics reports.
-* Identify trends that support data-driven decision-making.
+* Generate operational analytics and business reports.
+* Support data-driven decision-making through insights.
+* Simulate surge pricing and ride-demand analytics.
 
 ---
 
@@ -23,8 +24,10 @@ This project demonstrates practical applications of Python, SQL, data processing
 * Python
 * Pandas
 * NumPy
-* PostgreSQL
 * SQL
+* PostgreSQL
+* Streamlit
+* Matplotlib
 * Git & GitHub
 
 ---
@@ -33,31 +36,26 @@ This project demonstrates practical applications of Python, SQL, data processing
 
 ### Real-Time Ride Data Simulation
 
-* Simulates ride booking transactions.
-* Generates realistic ride demand scenarios.
-* Produces structured ride datasets for analysis.
+* Generates realistic ride transaction records.
+* Simulates ride bookings across multiple locations.
 
 ### Data Processing Pipeline
 
 * Cleans and validates ride data.
 * Handles missing values and inconsistencies.
-* Prepares datasets for downstream analytics.
+* Prepares datasets for analytics.
 
-### Surge Pricing Engine
+### Ride Analytics
 
-* Implements demand-based surge pricing.
-* Dynamically adjusts ride fares during peak demand periods.
+* Tracks ride demand trends.
+* Analyzes ride status distribution.
+* Evaluates operational performance.
 
-### SQL Analytics
+### Interactive Dashboard
 
-* Performs ride demand analysis.
-* Generates ride volume reports.
-* Evaluates pricing and operational performance.
-
-### Business Intelligence Reporting
-
-* Tracks ride trends and demand patterns.
-* Supports business decision-making through analytics.
+* Displays ride KPIs and business metrics.
+* Provides visual insights through charts and reports.
+* Enables quick analysis of ride operations.
 
 ---
 
@@ -65,23 +63,49 @@ This project demonstrates practical applications of Python, SQL, data processing
 
 ### Ride Demand Analysis
 
-* Evaluated ride requests across multiple locations.
-* Identified peak demand periods and ride patterns.
+* Evaluated ride requests across locations.
+* Identified peak ride demand areas.
 
-### Surge Pricing Analysis
+### Ride Status Analysis
 
-* Analyzed surge multiplier impact on ride fares.
-* Compared normal and surge pricing scenarios.
+* Compared completed, cancelled, and unavailable rides.
+* Measured operational efficiency.
 
-### Revenue Analysis
+### Location Analysis
 
-* Examined ride revenue trends.
-* Evaluated key business performance indicators.
+* Identified top pickup locations.
+* Analyzed ride distribution across regions.
 
 ### Data Quality Analysis
 
-* Handled missing values and inconsistent records.
-* Performed data validation and preprocessing.
+* Cleaned and validated ride transaction records.
+* Processed missing and inconsistent data.
+
+---
+
+## Dashboard Preview
+
+### Main Dashboard
+
+![Dashboard Overview](dashboard_overview.png)
+
+### Ride Status Analysis
+
+![Ride Status Analysis](ride_status_chart.png)
+
+### Top Pickup Locations
+
+![Top Pickup Locations](pickup_locations_chart.png)
+
+---
+
+## Key Dashboard Metrics
+
+* Total Rides: 980
+* Completed Rides: 684
+* Cancelled Rides: 211
+* Multiple pickup locations analyzed
+* Real-time operational insights
 
 ---
 
@@ -91,6 +115,7 @@ This project demonstrates practical applications of Python, SQL, data processing
 ride-analytics-surge-pipeline/
 │
 ├── config/
+│
 ├── data_generator/
 │   └── mock_stream.py
 │
@@ -100,6 +125,10 @@ ride-analytics-surge-pipeline/
 ├── analytics/
 │
 ├── dashboard.py
+│
+├── dashboard_overview.png
+├── ride_status_chart.png
+├── pickup_locations_chart.png
 │
 └── README.md
 ```
@@ -118,52 +147,54 @@ cd ride-analytics-surge-pipeline
 ### 2. Install Dependencies
 
 ```bash
-pip install pandas numpy
+pip install pandas numpy streamlit matplotlib
 ```
 
 ### 3. Generate Ride Data
 
 ```bash
-python data_generator/mock_stream.py
+python3 data_generator/mock_stream.py
 ```
 
 ### 4. Run Data Processing Pipeline
 
 ```bash
-python pipeline/clean_engine.py
+python3 pipeline/clean_engine.py
 ```
 
 ### 5. Launch Dashboard
 
 ```bash
-python dashboard.py
+streamlit run dashboard.py
 ```
 
-### 6. Review Analytics
+### 6. View Analytics
 
-* Ride demand trends
-* Surge pricing insights
-* Revenue analysis
-* Business performance metrics
-* Data quality reports
+The dashboard provides:
+
+* Ride Status Analysis
+* Top Pickup Locations
+* Ride Data Preview
+* Operational Metrics
+* Business Performance Insights
 
 ---
 
 ## Business Insights
 
-* Peak demand periods result in higher surge pricing.
-* Ride demand varies significantly across locations and time periods.
-* Data-driven pricing strategies help optimize revenue.
-* Analytics can improve operational efficiency and resource allocation.
+* Completed rides account for the majority of ride requests.
+* Cancellation patterns help identify operational challenges.
+* Location-wise demand analysis supports resource planning.
+* Analytics-driven insights improve operational efficiency and decision-making.
 
 ---
 
 ## Future Enhancements
 
-* Real-time dashboard integration
+* Real-time streaming integration
 * Demand forecasting using Machine Learning
-* Advanced surge pricing algorithms
-* Automated reporting workflows
+* Advanced surge pricing models
+* Interactive business dashboards
 * Cloud deployment and monitoring
 
 ---
@@ -175,3 +206,5 @@ Akansha Pandey
 B.Sc. Computer Science
 
 Data Analyst | SQL | Python | Power BI
+
+GitHub: https://github.com/Aap2605
