@@ -2,20 +2,24 @@
 
 ## Project Overview
 
-Real-Time Ride Analytics & Surge Pricing Pipeline is an end-to-end Data Analytics and Data Engineering project that simulates a ride-hailing platform similar to Uber. The project focuses on ride data generation, data cleaning, analytics processing, and business intelligence reporting to derive meaningful insights from ride transactions.
+Real-Time Ride Analytics & Surge Pricing Pipeline is an end-to-end Data Analytics and Data Engineering project that simulates a ride-hailing platform similar to Uber.
 
-The system demonstrates how real-time ride data can be transformed into actionable business insights using Python, SQL, and analytics workflows commonly used in transportation and mobility platforms.
+The project focuses on ride data generation, data cleaning, data processing, analytics, and business intelligence reporting to transform raw ride data into meaningful business insights.
+
+The project also includes an interactive **Excel Ride Analytics Dashboard** created using PivotTables, PivotCharts, KPI Cards, and Filters/Slicers.
 
 ---
 
 ## Business Objectives
 
-* Analyze ride demand across multiple locations.
-* Track ride completion and cancellation patterns.
-* Process and clean ride transaction data.
+* Analyze ride demand across multiple pickup locations.
+* Track ride completion, cancellation, and driver availability patterns.
+* Clean and validate ride transaction data.
+* Analyze revenue and driver ratings.
 * Generate operational analytics and business reports.
-* Support data-driven decision-making through insights.
-* Simulate surge pricing and ride-demand analytics.
+* Identify important patterns and trends from ride data.
+* Support data-driven decision-making.
+* Analyze ride demand and surge-pricing-related information.
 
 ---
 
@@ -26,8 +30,11 @@ The system demonstrates how real-time ride data can be transformed into actionab
 * NumPy
 * SQL
 * PostgreSQL
+* Microsoft Excel
 * Streamlit
 * Matplotlib
+* PivotTables
+* PivotCharts
 * Git & GitHub
 
 ---
@@ -38,173 +45,59 @@ The system demonstrates how real-time ride data can be transformed into actionab
 
 * Generates realistic ride transaction records.
 * Simulates ride bookings across multiple locations.
+* Creates ride-related transactional data for analysis.
 
 ### Data Processing Pipeline
 
 * Cleans and validates ride data.
 * Handles missing values and inconsistencies.
 * Prepares datasets for analytics.
+* Generates clean data for further analysis.
 
 ### Ride Analytics
 
 * Tracks ride demand trends.
 * Analyzes ride status distribution.
 * Evaluates operational performance.
+* Analyzes pickup-location-wise ride activity.
+* Analyzes revenue and driver ratings.
 
-### Interactive Dashboard
+### Excel Analytics Dashboard
 
-* Displays ride KPIs and business metrics.
-* Provides visual insights through charts and reports.
-* Enables quick analysis of ride operations.
+An interactive Excel dashboard was created to provide a visual summary of ride performance.
 
----
+The dashboard includes:
 
-## Analytics Performed
-
-### Ride Demand Analysis
-
-* Evaluated ride requests across locations.
-* Identified peak ride demand areas.
-
-### Ride Status Analysis
-
-* Compared completed, cancelled, and unavailable rides.
-* Measured operational efficiency.
-
-### Location Analysis
-
-* Identified top pickup locations.
-* Analyzed ride distribution across regions.
-
-### Data Quality Analysis
-
-* Cleaned and validated ride transaction records.
-* Processed missing and inconsistent data.
+* Total Rides
+* Completed Rides
+* Cancelled Rides
+* No Driver Available
+* Total Revenue
+* Average Driver Rating
+* Ride Trend Over Time
+* Ride Status Distribution
+* Rides by Pickup Location
+* Total Revenue by Pickup Location
+* Interactive Filters / Slicers
+* Key Insights
 
 ---
 
-## Dashboard Preview
+## Data Analysis Workflow
 
-### Main Dashboard
-
-![Dashboard Overview](dashboard_overview.png)
-
-### Ride Status Analysis
-
-![Ride Status Analysis](ride_status_chart.png)
-
-### Top Pickup Locations
-
-![Top Pickup Locations](pickup_locations_chart.png)
-
----
-
-## Key Dashboard Metrics
-
-* Total Rides: 980
-* Completed Rides: 684
-* Cancelled Rides: 211
-* Multiple pickup locations analyzed
-* Real-time operational insights
-
----
-
-## Project Structure
+The project follows the following analytics workflow:
 
 ```text
-ride-analytics-surge-pipeline/
-│
-├── config/
-│
-├── data_generator/
-│   └── mock_stream.py
-│
-├── pipeline/
-│   └── clean_engine.py
-│
-├── analytics/
-│
-├── dashboard.py
-│
-├── dashboard_overview.png
-├── ride_status_chart.png
-├── pickup_locations_chart.png
-│
-└── README.md
-```
-
----
-
-## How to Run
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/Aap2605/ride-analytics-surge-pipeline.git
-cd ride-analytics-surge-pipeline
-```
-
-### 2. Install Dependencies
-
-```bash
-pip install pandas numpy streamlit matplotlib
-```
-
-### 3. Generate Ride Data
-
-```bash
-python3 data_generator/mock_stream.py
-```
-
-### 4. Run Data Processing Pipeline
-
-```bash
-python3 pipeline/clean_engine.py
-```
-
-### 5. Launch Dashboard
-
-```bash
-streamlit run dashboard.py
-```
-
-### 6. View Analytics
-
-The dashboard provides:
-
-* Ride Status Analysis
-* Top Pickup Locations
-* Ride Data Preview
-* Operational Metrics
-* Business Performance Insights
-
----
-
-## Business Insights
-
-* Completed rides account for the majority of ride requests.
-* Cancellation patterns help identify operational challenges.
-* Location-wise demand analysis supports resource planning.
-* Analytics-driven insights improve operational efficiency and decision-making.
-
----
-
-## Future Enhancements
-
-* Real-time streaming integration
-* Demand forecasting using Machine Learning
-* Advanced surge pricing models
-* Interactive business dashboards
-* Cloud deployment and monitoring
-
----
-
-## Author
-
-Akansha Pandey
-
-B.Sc. Computer Science
-
-Data Analyst | SQL | Python | Power BI
-
-GitHub: https://github.com/Aap2605
+Raw Ride Data
+      ↓
+Data Cleaning
+      ↓
+Clean Dataset
+      ↓
+PivotTables
+      ↓
+PivotCharts & KPI Calculations
+      ↓
+Interactive Dashboard
+      ↓
+Business Insights
